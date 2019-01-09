@@ -3,7 +3,8 @@
 #include <tchar.h>
 #include <stdio.h>
 #include <Windows.h>
-#include <time.h>
+
+#define ShowDebug(format, ...) ShowDebugBase(TEXT("FUNC: %s()  MSG: ") TEXT(format), TEXT(__FUNCTION__), ##__VA_ARGS__)
 
 void ShowDebugBase(const TCHAR *format, ...)
 {
@@ -21,7 +22,5 @@ void ShowDebugBase(const TCHAR *format, ...)
     OutputDebugString(msgBuf);
     va_end(args);
 }
-
-#define ShowDebug(format, ...) ShowDebugBase(TEXT("FUNC: %s()  MSG: ") TEXT(format), TEXT(__FUNCTION__), ##__VA_ARGS__)
 
 #endif
