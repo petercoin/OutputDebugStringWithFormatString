@@ -6,7 +6,7 @@
 
 #define ShowDebug(format, ...) ShowDebugBase(TEXT("FUNC: %s()  MSG: ") TEXT(format), TEXT(__FUNCTION__), ##__VA_ARGS__)
 
-void ShowDebugBase(const TCHAR *format, ...)
+inline void ShowDebugBase(const TCHAR *format, ...)
 {
     va_list args;
     SYSTEMTIME time;
